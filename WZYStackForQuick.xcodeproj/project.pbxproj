@@ -13,9 +13,13 @@
 		989E690C1CF321A500EC84A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 989E690A1CF321A500EC84A2 /* Main.storyboard */; };
 		989E690E1CF321A500EC84A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 989E690D1CF321A500EC84A2 /* Assets.xcassets */; };
 		989E69111CF321A600EC84A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 989E690F1CF321A600EC84A2 /* LaunchScreen.storyboard */; };
+		DBB1A9F231E815702AD2BB06 /* Pods_WZYStackForQuick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA3CB61FABE2C993EC30FD4 /* Pods_WZYStackForQuick.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4AA3CB61FABE2C993EC30FD4 /* Pods_WZYStackForQuick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WZYStackForQuick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B14DA6E37108119EED970F0 /* Pods-WZYStackForQuick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZYStackForQuick.release.xcconfig"; path = "Pods/Target Support Files/Pods-WZYStackForQuick/Pods-WZYStackForQuick.release.xcconfig"; sourceTree = "<group>"; };
+		90716E5F44F40DB0B1BE857C /* Pods-WZYStackForQuick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZYStackForQuick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WZYStackForQuick/Pods-WZYStackForQuick.debug.xcconfig"; sourceTree = "<group>"; };
 		989E68FE1CF321A500EC84A2 /* WZYStackForQuick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WZYStackForQuick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		989E69021CF321A500EC84A2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		989E69041CF321A500EC84A2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBB1A9F231E815702AD2BB06 /* Pods_WZYStackForQuick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		668F9AAB4F84FA39CCA66776 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90716E5F44F40DB0B1BE857C /* Pods-WZYStackForQuick.debug.xcconfig */,
+				7B14DA6E37108119EED970F0 /* Pods-WZYStackForQuick.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8A48305295F27C801717782C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4AA3CB61FABE2C993EC30FD4 /* Pods_WZYStackForQuick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		989E68F51CF321A500EC84A2 = {
 			isa = PBXGroup;
 			children = (
 				989E69001CF321A500EC84A2 /* WZYStackForQuick */,
 				989E68FF1CF321A500EC84A2 /* Products */,
+				668F9AAB4F84FA39CCA66776 /* Pods */,
+				8A48305295F27C801717782C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 989E69151CF321A600EC84A2 /* Build configuration list for PBXNativeTarget "WZYStackForQuick" */;
 			buildPhases = (
+				6441ACD8CF3A5D25B24EDE9B /* 📦 Check Pods Manifest.lock */,
 				989E68FA1CF321A500EC84A2 /* Sources */,
 				989E68FB1CF321A500EC84A2 /* Frameworks */,
 				989E68FC1CF321A500EC84A2 /* Resources */,
+				DFF49E3FA526E6BC29D144C6 /* 📦 Embed Pods Frameworks */,
+				9DAADA6533FB7B8E2BABBF91 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,6 +170,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6441ACD8CF3A5D25B24EDE9B /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9DAADA6533FB7B8E2BABBF91 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WZYStackForQuick/Pods-WZYStackForQuick-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFF49E3FA526E6BC29D144C6 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WZYStackForQuick/Pods-WZYStackForQuick-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		989E68FA1CF321A500EC84A2 /* Sources */ = {
@@ -261,6 +336,7 @@
 		};
 		989E69161CF321A600EC84A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90716E5F44F40DB0B1BE857C /* Pods-WZYStackForQuick.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WZYStackForQuick/Info.plist;
@@ -272,6 +348,7 @@
 		};
 		989E69171CF321A600EC84A2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B14DA6E37108119EED970F0 /* Pods-WZYStackForQuick.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WZYStackForQuick/Info.plist;
@@ -300,6 +377,7 @@
 				989E69171CF321A600EC84A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
