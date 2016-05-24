@@ -24,7 +24,8 @@ describe(@"WZYStack", ^{
 //    afterEachWithMetadata(^(ExampleMetadata *exampleMetadata){
 //        NSLog(@"Example number %l has run.", (long)exampleMetadata.exampleIndex);
 //    });
-//    
+//
+    
     context(@"when new created", ^{
         beforeEach(^{
             stack = [WZYStack new];
@@ -41,12 +42,12 @@ describe(@"WZYStack", ^{
         it(@"should exist", ^{
             expect(stack).notTo(beNil());
         });
-//
+
         it(@"should be able to push and get top", ^{
             [stack push:2.3];
             expect(@([stack top])).to(equal(@(2.3)));
         });
-//
+        
         it(@"should equal contains 0 element", ^{
             expect(@([stack count])).to(equal(@0));
         });
